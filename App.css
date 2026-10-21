@@ -1,0 +1,449 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+}
+
+html, body , 
+#root{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(2, 9, 20);
+  color: rgb(237, 232, 232);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main {
+  position: relative;
+}
+
+section{
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+nav,
+.title,
+.site-footer {
+  pointer-events: auto;
+}
+#canvas-elem::after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/Models/background-m.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
+
+
+#section-1  {
+
+
+--gap:7rem;
+position: relative;
+  
+  
+
+
+
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+   padding-top: 3.5rem; 
+
+
+.nav-element:nth-child(2){
+    i{
+      color: red;
+    }
+}
+    
+    svg{
+      max-width: 5rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .middle {
+    gap: var(--gap);
+    display: flex;
+    .left , .right{
+    width: 50%;
+    }
+    .left{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-block: 7rem;
+    }
+    h1{
+      font-size: 5rem;
+      line-height: 0.8;
+      text-align: right;
+    }
+  }
+  .bottom {
+    display: flex;
+    gap: var(--gap);
+    .left, .right {
+        width: 50%;
+    }
+    .right {
+      h4{
+        font-weight: 600;
+        line-height: 2;
+      }
+       p {
+        font-weight: 300;
+        line-height: 1.5;
+      }
+    }
+  }
+  .first-line{
+    width: 20rem;
+    height: 1px;
+    background-color: rgb(126, 17, 17);
+    position: absolute;
+    transform: rotate(45deg) translate(0,-20rem);
+
+  }
+  .second-line{
+    width: 10rem;
+    height: 1px;
+    background-color: rgb(126, 17, 17);
+    position: absolute;
+    transform: rotate(135deg);
+    top: 28%;
+    right: 8%;
+  }
+
+
+}
+
+#section-2 {
+  .titles{
+    display: flex;
+    flex-direction: column;
+    padding-left: 17rem;
+    padding-block: 10rem;
+  }
+  .title{
+    display: flex;
+    gap: 4rem;
+    opacity: 0.3;
+    padding-block: 1rem;
+    transition: all 0.3s linear;
+
+    h1{
+      font-size: 3rem;
+      font-weight: 100;
+      line-height: 1;
+    }
+    small{
+      margin-top: 0.8rem;
+      font-size: 0.5rem;
+    }
+  }
+
+  .title:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+main:has(#section-2 .title:hover) #canvas-elem::after {
+  opacity: 0;
+}
+
+.images{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+}
+
+main:has(#section-2 .title[img-title="Greater-noida"]:hover) #Greater-noida{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(4, 7, 85);
+} 
+main:has(#section-2 .title[img-title="Old-school"]:hover) #Old-school{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(14, 14, 42);
+} 
+
+main:has(#section-2 .title[img-title="courage"]:hover) #courage{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(3, 19, 29);
+} 
+main:has(#section-2 .title[img-title="love"]:hover) #love{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(129, 59, 111);
+} 
+main:has(#section-2 .title[img-title="HeartBreak"]:hover) #HeartBreak{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(35, 35, 112);
+} 
+main:has(#section-2 .title[img-title="toxic"]:hover) #toxic{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(45, 95, 45);
+} 
+main:has(#section-2 .title[img-title="Playboy"]:hover) #Playboy{
+  opacity: 1;
+  transition: all 0.3s linear;
+  background-color: rgb(200, 63, 63);
+}
+
+#section-3 {
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 2.5rem 2rem;
+  background:
+    radial-gradient(ellipse at 78% 35%, rgba(93, 50, 75, 0.24), transparent 35%),
+    linear-gradient(180deg, rgba(2, 9, 20, 0.15), #050914 40%);
+}
+
+.site-footer {
+  width: 100%;
+  min-height: 65vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(237, 232, 232, 0.22);
+  border-bottom: 1px solid rgba(237, 232, 232, 0.22);
+  perspective: 900px;
+}
+
+.footer-heading {
+  z-index: 1;
+  padding: 4rem 0;
+}
+
+.footer-eyebrow {
+  margin-bottom: 1.25rem;
+  color: #d68c72;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+}
+
+.footer-heading h2 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.footer-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(237, 232, 232, 0.55);
+  color: #f3eee5;
+  text-decoration: none;
+}
+
+.footer-cta span {
+  color: #d68c72;
+  transition: transform 0.2s ease;
+}
+
+.footer-cta:hover span,
+.footer-cta:focus-visible span {
+  transform: translate(3px, -3px);
+}
+
+.footer-art {
+  height: 20rem;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 700px;
+}
+
+.footer-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14rem;
+  height: 14rem;
+  border: 1px solid rgba(237, 190, 166, 0.65);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(68deg) rotateY(-18deg);
+  animation: footer-ring-turn 12s linear infinite;
+}
+
+.footer-ring-back {
+  width: 11rem;
+  height: 11rem;
+  border-color: rgba(133, 149, 177, 0.55);
+  transform: translate(-50%, -50%) rotateY(68deg) rotateX(18deg);
+  animation-direction: reverse;
+}
+
+.footer-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #f2c2a4, #b55d61 38%, #34233c 78%);
+  box-shadow: 0 0 70px rgba(190, 88, 100, 0.28), inset -16px -18px 28px rgba(5, 9, 20, 0.65);
+  transform: translate(-50%, -50%) translateZ(35px);
+  animation: footer-orb-float 5s ease-in-out infinite alternate;
+}
+
+.footer-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  color: #ffe3ca;
+  font-size: 2rem;
+  transform: translate(-50%, -50%) translateZ(85px);
+  animation: footer-star-turn 18s linear infinite;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  color: rgba(237, 232, 232, 0.56);
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #fff;
+}
+
+@keyframes footer-ring-turn {
+  to { rotate: 360deg; }
+}
+
+@keyframes footer-orb-float {
+  to { transform: translate(-50%, -58%) translateZ(35px); }
+}
+
+@keyframes footer-star-turn {
+  to { transform: translate(-50%, -50%) translateZ(85px) rotate(360deg); }
+}
+
+@media (max-width: 700px) {
+  #section-1 nav {
+    padding: 2rem 1.25rem 1rem;
+  }
+
+  #section-1 .middle {
+    gap: 1rem;
+  }
+
+  #section-1 .middle .left {
+    width: 100%;
+    justify-content: center;
+    padding-block: 5rem;
+  }
+
+  #section-1 .middle h1 {
+    font-size: clamp(3.5rem, 17vw, 5rem);
+    text-align: center;
+  }
+
+  #section-1 .middle .right,
+  #section-1 .bottom .left {
+    display: none;
+  }
+
+  #section-1 .bottom {
+    justify-content: center;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  #section-1 .bottom .right {
+    width: 100%;
+  }
+
+  #section-2 .titles {
+    padding: 7rem 1.25rem;
+  }
+
+  #section-2 .title {
+    gap: 1rem;
+  }
+
+  #section-2 .title h1 {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  #section-3 {
+    min-height: 75vh;
+    padding: 2rem 1.25rem;
+  }
+
+  .site-footer {
+    min-height: 65vh;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-heading {
+    padding: 3rem 0 0;
+  }
+
+  .footer-art {
+    height: 15rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
